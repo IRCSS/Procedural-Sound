@@ -2,22 +2,34 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProceduralTone : MonoBehaviour {
+public class ProceduralScaleLoop : MonoBehaviour {
 
-    // --------------------------------------
+// --------------------------------------
     // Public
-    public  float toneFrequency; 
+    public KeyIndeciesToFrequencies fundementalToneFrequencies;
+    public  float gain;
+    public    int beginingNote;
+    
+    public  float[] harmonicStrengths = new float[12];
 
-    private float samplingFrequency;       // this is the number of samples we use per second,to construct the sound waveforms.
+    private float   samplingFrequency;     // this is the number of samples we use per second,to construct the sound waveforms.
                                            // default is 48,000 samples. This means if your frame rate is 60 fps, in each frame you need to provide 48k/60 samples. 
-                                           
+
     private AudioSource ad_source;
 
-    private float phase;
-	// Use this for initialization
-	void Start () {
-        ad_source         = gameObject.GetComponent<AudioSource>();
+    private int currentNote = 0;
+    private float[] phase = new float[12];
+    private float fundementalToneFrequency;
+
+    private float scaleTimer = 0;
+
+    void Start ()
+    {
+        ad_source         = gameObject.AddComponent<AudioSource>();
         samplingFrequency = AudioSettings.outputSampleRate;
+        currentNote = beginingNote;
+        fundementalToneFrequency = fundementalToneFrequencies.fundementalFrequencies[currentNote];
+        
     }
 
     // This function is called every time the audio stream info is updated. IMPORTANT: the function 
@@ -33,21 +45,27 @@ public class ProceduralTone : MonoBehaviour {
     // As stated default this function is called 46.8751 times per second, 1024 * 46.8751 = 48k, which is our sample rate
     void OnAudioFilterRead(float[] data, int channels)
     {
+        
+        if ((float)AudioSettings.dspTime - scaleTimer  > 1.0f)
+        {
+            currentNote++;
+            if (currentNote >= fundementalToneFrequencies.fundementalFrequencies.Length) currentNote = beginingNote;
+            fundementalToneFrequency = fundementalToneFrequencies.fundementalFrequencies[currentNote];
+            scaleTimer = (float)AudioSettings.dspTime;
+        };
+        
 
-        float timeAtTheBeginig = (float)(AudioSettings.dspTime%(1.0 / (double)toneFrequency)); // very important to deal with percision issue as dspTime gets large
 
-        float increment = toneFrequency * 2f * Mathf.PI / samplingFrequency ;
 
         int currentSampleIndex = 0;
         for (int i = 0; i< data.Length; i++)
         {
 
-            float exactTime = timeAtTheBeginig + (float)currentSampleIndex / samplingFrequency;
-             data[i] = Mathf.Sin((exactTime * toneFrequency * 2f * Mathf.PI )) * 0.8f;
 
-            // phase = phase + increment;                            // If you count your own phase (kind of like a timer), you dont have to deal with percision issue of float, however if you are playing several frequencies, each would require its own phase, which can get annoying
-            // if (phase > 2 * Mathf.PI) phase = 0;
-            // data[i] = Mathf.Sin(phase)*0.8f;
+
+
+           
+            data[i] = ReturnSuperimposedHarmonicsSeries()* gain;
 
             currentSampleIndex++;
 
@@ -57,6 +75,27 @@ public class ProceduralTone : MonoBehaviour {
                 i++;
             }
         }
+    }
+
+
+    public float ReturnSuperimposedHarmonicsSeries()
+    {
+        float superImposed = 0.0f;
+
+        for(int i = 1; i<= 12; i++)
+        {
+            float harmonicFrequency = fundementalToneFrequency * i;
+            float increment = harmonicFrequency * 2f * Mathf.PI / samplingFrequency;
+
+            phase[i-1] = phase[i - 1] + increment;
+            if (phase[i - 1] > 2.0f * Mathf.PI) phase[i - 1] = 0;
+
+            superImposed += Mathf.Sin(phase[i - 1]) * harmonicStrengths[i - 1];
+        }
+        
+
+
+        return superImposed;
     }
 
         // Update is called once per frame

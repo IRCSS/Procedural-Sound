@@ -2,21 +2,25 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ProceduralTone : MonoBehaviour {
+public class ProceduralToneWithHarmonics : MonoBehaviour {
 
-    // --------------------------------------
+   // --------------------------------------
     // Public
-    public  float toneFrequency; 
+    public  float fundementalToneFrequency;
+    public  float gain;
 
-    private float samplingFrequency;       // this is the number of samples we use per second,to construct the sound waveforms.
+    public  float[] harmonicStrengths = new float[12];
+
+    private float   samplingFrequency;     // this is the number of samples we use per second,to construct the sound waveforms.
                                            // default is 48,000 samples. This means if your frame rate is 60 fps, in each frame you need to provide 48k/60 samples. 
-                                           
+
     private AudioSource ad_source;
 
-    private float phase;
-	// Use this for initialization
-	void Start () {
-        ad_source         = gameObject.GetComponent<AudioSource>();
+    private float[] phase = new float[12];
+
+    void Start ()
+    {
+        ad_source         = gameObject.AddComponent<AudioSource>();
         samplingFrequency = AudioSettings.outputSampleRate;
     }
 
@@ -34,20 +38,19 @@ public class ProceduralTone : MonoBehaviour {
     void OnAudioFilterRead(float[] data, int channels)
     {
 
-        float timeAtTheBeginig = (float)(AudioSettings.dspTime%(1.0 / (double)toneFrequency)); // very important to deal with percision issue as dspTime gets large
+        float timeAtTheBeginig = (float)AudioSettings.dspTime;
 
-        float increment = toneFrequency * 2f * Mathf.PI / samplingFrequency ;
+        
 
         int currentSampleIndex = 0;
         for (int i = 0; i< data.Length; i++)
         {
 
-            float exactTime = timeAtTheBeginig + (float)currentSampleIndex / samplingFrequency;
-             data[i] = Mathf.Sin((exactTime * toneFrequency * 2f * Mathf.PI )) * 0.8f;
 
-            // phase = phase + increment;                            // If you count your own phase (kind of like a timer), you dont have to deal with percision issue of float, however if you are playing several frequencies, each would require its own phase, which can get annoying
-            // if (phase > 2 * Mathf.PI) phase = 0;
-            // data[i] = Mathf.Sin(phase)*0.8f;
+
+
+           
+            data[i] = ReturnSuperimposedHarmonicsSeries()* gain;
 
             currentSampleIndex++;
 
@@ -57,6 +60,27 @@ public class ProceduralTone : MonoBehaviour {
                 i++;
             }
         }
+    }
+
+
+    public float ReturnSuperimposedHarmonicsSeries()
+    {
+        float superImposed = 0.0f;
+
+        for(int i = 1; i<= 12; i++)
+        {
+            float harmonicFrequency = fundementalToneFrequency * i;
+            float increment = harmonicFrequency * 2f * Mathf.PI / samplingFrequency;
+
+            phase[i-1] = phase[i - 1] + increment;
+            if (phase[i - 1] > 2.0f * Mathf.PI) phase[i - 1] = 0;
+
+            superImposed += Mathf.Sin(phase[i - 1]) * harmonicStrengths[i - 1];
+        }
+        
+
+
+        return superImposed;
     }
 
         // Update is called once per frame
