@@ -140,6 +140,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c2fd032eb6660d42bca2ab0be1edf0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  sheetToPlay: {fileID: 11400000, guid: c960788181fd9f64aa4370ab2e8af491, type: 2}
+  beatPerMinute: 180
   firstKey: 48
   notesKeyCodes: 6100000073000000640000006600000067000000680000006a0000006b0000006c000000690000006f00000070000000
 --- !u!4 &5156831
@@ -268,7 +270,7 @@ MonoBehaviour:
     Attack: 0.02
     Decay: 0.3
     Sustain: 0.5
-    Release: 1
+    Release: 0.2
   harmonicStrengths:
   - 0.25
   - 0.5

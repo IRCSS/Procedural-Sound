@@ -46,7 +46,7 @@ public class KeyIndeciesToFrequencies : ScriptableObject
         };
     }
 
-    public KeyNamesToIndicies GetKeyIndexName(int index) { return (KeyNamesToIndicies) index; }
-    public OctavesName GetOctaveName(int keyIndex) { return (OctavesName)(keyIndex / 12); }
-    public KeyNameInOctave GetKeyName(int index) { return (KeyNameInOctave)(index % 12); }
+    public static KeyNamesToIndicies GetKeyIndexName(int index) { return (KeyNamesToIndicies) index; }
+    public static OctavesName GetOctaveName(int keyIndex) { return (OctavesName)(keyIndex / 12); }
+    public static KeyNameInOctave GetKeyName(int index) { return (KeyNameInOctave)(index % 12); }
 }
