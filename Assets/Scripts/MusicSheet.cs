@@ -2,13 +2,19 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+[System.Serializable]
+public enum SemitoneAttachments
+{
+    None, Sharp, Flat, Natural
+}
 
 [System.Serializable]
 public class SheetNote
 {
-    public float               noteBegin;     // At which beat does the note begin in a measure. For example if the time signature is 4/4 and it is on the second beat, this will be 2
-    public float               noteDuration;  // Again in beat units.No time used anywhere in the sheet.
-    public int                 notePositionInKey; // This is the note position on the staff, for example in the treble G Major, the G is the 3. I did it like this instead of scientific pitch because it is easier and faster to input music sheets. Also it is easy to switch keys on the same notes and it automaticly takes care of the sharps
+    public float               noteBegin;         // At which beat does the note begin in a measure. For example if the time signature is 4/4 and it is on the second beat, this will be 2
+    public float               noteDuration;      // Again in beat units.No time used anywhere in the sheet.
+    public int                 notePositionInKey; // This is the note position on the staff, for example in the treble G Major, the G is the 2. I did it like this instead of scientific pitch because it is easier and faster to input music sheets. Also it is easy to switch keys on the same notes and it automaticly takes care of the sharps
+    public SemitoneAttachments semiToneSymbol;    // this can push the note up or down by half the step, for example F to F#. It is a global effect, after this any note which has this symbol will be a sharp until a natural pops up or the measure ends
 }
 
 [System.Serializable]

@@ -20,222 +20,746 @@ MonoBehaviour:
       - noteBegin: 0
         noteDuration: 0.375
         notePositionInKey: 6
+        semiToneSymbol: 0
       - noteBegin: 0.375
         noteDuration: 0.125
         notePositionInKey: 5
+        semiToneSymbol: 0
       - noteBegin: 0.5
         noteDuration: 0.25
         notePositionInKey: 4
+        semiToneSymbol: 0
       - noteBegin: 0.75
         noteDuration: 0.25
         notePositionInKey: 3
+        semiToneSymbol: 0
     - notesInTheMeasure:
       - noteBegin: 0
         noteDuration: 0.25
         notePositionInKey: 2
+        semiToneSymbol: 0
       - noteBegin: 0.25
         noteDuration: 0.25
         notePositionInKey: 3
+        semiToneSymbol: 0
       - noteBegin: 0.5
         noteDuration: 0.25
         notePositionInKey: 4
+        semiToneSymbol: 0
       - noteBegin: 0.75
         noteDuration: 0.25
         notePositionInKey: 2
+        semiToneSymbol: 0
     - notesInTheMeasure:
       - noteBegin: 0
         noteDuration: 0.125
         notePositionInKey: 3
+        semiToneSymbol: 0
       - noteBegin: 0.125
         noteDuration: 0.125
         notePositionInKey: 4
+        semiToneSymbol: 0
       - noteBegin: 0.25
         noteDuration: 0.125
         notePositionInKey: 5
+        semiToneSymbol: 0
       - noteBegin: 0.375
         noteDuration: 0.125
         notePositionInKey: 3
+        semiToneSymbol: 0
       - noteBegin: 0.5
         noteDuration: 0.375
         notePositionInKey: 4
+        semiToneSymbol: 0
       - noteBegin: 0.875
         noteDuration: 0.125
         notePositionInKey: 3
+        semiToneSymbol: 0
     - notesInTheMeasure:
       - noteBegin: 0
         noteDuration: 0.25
         notePositionInKey: 2
+        semiToneSymbol: 0
       - noteBegin: 0.25
         noteDuration: 0.25
         notePositionInKey: 1
+        semiToneSymbol: 0
       - noteBegin: 0.5
         noteDuration: 0.5
         notePositionInKey: 2
+        semiToneSymbol: 0
     - notesInTheMeasure:
       - noteBegin: 0
         noteDuration: 0.375
         notePositionInKey: 6
+        semiToneSymbol: 0
       - noteBegin: 0.375
         noteDuration: 0.125
         notePositionInKey: 5
+        semiToneSymbol: 0
       - noteBegin: 0.5
         noteDuration: 0.25
         notePositionInKey: 4
+        semiToneSymbol: 0
       - noteBegin: 0.75
         noteDuration: 0.25
         notePositionInKey: 3
+        semiToneSymbol: 0
     - notesInTheMeasure:
       - noteBegin: 0
         noteDuration: 0.25
         notePositionInKey: 2
+        semiToneSymbol: 0
       - noteBegin: 0.25
         noteDuration: 0.25
         notePositionInKey: 3
+        semiToneSymbol: 0
       - noteBegin: 0.5
         noteDuration: 0.25
         notePositionInKey: 4
+        semiToneSymbol: 0
       - noteBegin: 0.75
         noteDuration: 0.25
         notePositionInKey: 2
+        semiToneSymbol: 0
     - notesInTheMeasure:
       - noteBegin: 0
         noteDuration: 0.125
         notePositionInKey: 3
+        semiToneSymbol: 0
       - noteBegin: 0.125
         noteDuration: 0.125
         notePositionInKey: 4
+        semiToneSymbol: 0
       - noteBegin: 0.25
         noteDuration: 0.125
         notePositionInKey: 5
+        semiToneSymbol: 0
       - noteBegin: 0.375
         noteDuration: 0.125
         notePositionInKey: 3
+        semiToneSymbol: 0
       - noteBegin: 0.5
         noteDuration: 0.375
         notePositionInKey: 4
+        semiToneSymbol: 0
       - noteBegin: 0.875
         noteDuration: 0.125
         notePositionInKey: 3
+        semiToneSymbol: 0
     - notesInTheMeasure:
       - noteBegin: 0
         noteDuration: 0.25
         notePositionInKey: 2
+        semiToneSymbol: 0
       - noteBegin: 0.25
         noteDuration: 0.25
         notePositionInKey: 1
+        semiToneSymbol: 0
       - noteBegin: 0.5
         noteDuration: 0.5
         notePositionInKey: 2
+        semiToneSymbol: 0
     - notesInTheMeasure:
       - noteBegin: 0
         noteDuration: 0.375
         notePositionInKey: 3
+        semiToneSymbol: 0
       - noteBegin: 0.375
         noteDuration: 0.125
         notePositionInKey: 4
+        semiToneSymbol: 0
       - noteBegin: 0.5
         noteDuration: 0.25
         notePositionInKey: 5
+        semiToneSymbol: 0
       - noteBegin: 0.75
         noteDuration: 0.25
         notePositionInKey: 3
+        semiToneSymbol: 0
     - notesInTheMeasure:
       - noteBegin: 0
         noteDuration: 0.375
         notePositionInKey: 4
+        semiToneSymbol: 0
       - noteBegin: 0.375
         noteDuration: 0.125
         notePositionInKey: 5
+        semiToneSymbol: 0
       - noteBegin: 0.5
         noteDuration: 0.25
         notePositionInKey: 6
+        semiToneSymbol: 0
       - noteBegin: 0.75
         noteDuration: 0.25
         notePositionInKey: 3
+        semiToneSymbol: 0
     - notesInTheMeasure:
       - noteBegin: 0
         noteDuration: 0.125
         notePositionInKey: 4
+        semiToneSymbol: 0
       - noteBegin: 0.125
         noteDuration: 0.125
         notePositionInKey: 5
+        semiToneSymbol: 1
       - noteBegin: 0.25
         noteDuration: 0.25
         notePositionInKey: 6
+        semiToneSymbol: 0
       - noteBegin: 0.5
         noteDuration: 0.125
         notePositionInKey: 7
+        semiToneSymbol: 0
       - noteBegin: 0.625
         noteDuration: 0.125
         notePositionInKey: 8
+        semiToneSymbol: 0
       - noteBegin: 0.75
         noteDuration: 0.25
         notePositionInKey: 9
+        semiToneSymbol: 0
     - notesInTheMeasure:
       - noteBegin: 0
         noteDuration: 0.25
         notePositionInKey: 8
+        semiToneSymbol: 0
       - noteBegin: 0.25
         noteDuration: 0.25
         notePositionInKey: 7
+        semiToneSymbol: 0
       - noteBegin: 0.5
         noteDuration: 0.5
         notePositionInKey: 6
+        semiToneSymbol: 0
     - notesInTheMeasure:
       - noteBegin: 0
         noteDuration: 0.375
         notePositionInKey: 6
+        semiToneSymbol: 0
       - noteBegin: 0.375
         noteDuration: 0.125
         notePositionInKey: 5
+        semiToneSymbol: 0
       - noteBegin: 0.5
         noteDuration: 0.25
         notePositionInKey: 4
+        semiToneSymbol: 0
       - noteBegin: 0.75
         noteDuration: 0.25
         notePositionInKey: 3
+        semiToneSymbol: 0
     - notesInTheMeasure:
       - noteBegin: 0
         noteDuration: 0.25
         notePositionInKey: 2
+        semiToneSymbol: 0
       - noteBegin: 0.25
         noteDuration: 0.25
         notePositionInKey: 3
+        semiToneSymbol: 0
       - noteBegin: 0.5
         noteDuration: 0.25
         notePositionInKey: 4
+        semiToneSymbol: 0
       - noteBegin: 0.75
         noteDuration: 0.25
         notePositionInKey: 2
+        semiToneSymbol: 0
     - notesInTheMeasure:
       - noteBegin: 0
         noteDuration: 0.125
         notePositionInKey: 7
+        semiToneSymbol: 0
       - noteBegin: 0.125
         noteDuration: 0.125
         notePositionInKey: 7
+        semiToneSymbol: 0
       - noteBegin: 0.25
         noteDuration: 0.125
         notePositionInKey: 7
+        semiToneSymbol: 0
       - noteBegin: 0.375
         noteDuration: 0.125
         notePositionInKey: 7
+        semiToneSymbol: 0
       - noteBegin: 0.5
         noteDuration: 0.375
         notePositionInKey: 6
+        semiToneSymbol: 0
       - noteBegin: 0.875
         noteDuration: 0.125
         notePositionInKey: 5
+        semiToneSymbol: 0
     - notesInTheMeasure:
       - noteBegin: 0
         noteDuration: 0.25
         notePositionInKey: 4
+        semiToneSymbol: 0
       - noteBegin: 0.25
         noteDuration: 0.25
         notePositionInKey: 3
+        semiToneSymbol: 0
       - noteBegin: 0.5
         noteDuration: 0.5
         notePositionInKey: 2
+        semiToneSymbol: 0
   Bass:
     Key: 0
-    measuresInTheSheet: []
+    measuresInTheSheet:
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.75
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.75
+        notePositionInKey: 9
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.75
+        notePositionInKey: 11
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 6
+        semiToneSymbol: 0
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 5
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.25
+        notePositionInKey: 6
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.5
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.5
+        notePositionInKey: 9
+        semiToneSymbol: 0
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.5
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.5
+        notePositionInKey: 6
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.5
+        notePositionInKey: 8
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.125
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0.625
+        noteDuration: 0.125
+        notePositionInKey: 8
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 9
+        semiToneSymbol: 0
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 9
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.25
+        notePositionInKey: 8
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.25
+        notePositionInKey: 9
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.25
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.75
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.75
+        notePositionInKey: 9
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.75
+        notePositionInKey: 11
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 6
+        semiToneSymbol: 0
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 5
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.25
+        notePositionInKey: 6
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.5
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.5
+        notePositionInKey: 9
+        semiToneSymbol: 0
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.5
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.5
+        notePositionInKey: 6
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.5
+        notePositionInKey: 8
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.125
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0.625
+        noteDuration: 0.125
+        notePositionInKey: 8
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 9
+        semiToneSymbol: 0
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 9
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.25
+        notePositionInKey: 8
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.25
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.25
+        notePositionInKey: 9
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 6
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 8
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.5
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.5
+        notePositionInKey: 6
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.5
+        notePositionInKey: 8
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 6
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 8
+        semiToneSymbol: 0
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 9
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.5
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.5
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.5
+        notePositionInKey: 9
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 6
+        semiToneSymbol: 0
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 9
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.25
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.25
+        notePositionInKey: 5
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.25
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.25
+        notePositionInKey: 9
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 5
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 7
+        semiToneSymbol: 0
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 6
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 8
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.25
+        notePositionInKey: 3
+        semiToneSymbol: 1
+      - noteBegin: 0.25
+        noteDuration: 0.25
+        notePositionInKey: 8
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.125
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0.625
+        noteDuration: 0.125
+        notePositionInKey: 5
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.125
+        notePositionInKey: 6
+        semiToneSymbol: 0
+      - noteBegin: 0.875
+        noteDuration: 0.125
+        notePositionInKey: 8
+        semiToneSymbol: 0
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.75
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.75
+        notePositionInKey: 9
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.75
+        notePositionInKey: 11
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 6
+        semiToneSymbol: 0
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 5
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 6
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.25
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0.75
+        noteDuration: 0.25
+        notePositionInKey: 9
+        semiToneSymbol: 0
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.5
+        notePositionInKey: 5
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.5
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.5
+        notePositionInKey: 10
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.5
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.5
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.5
+        notePositionInKey: 9
+        semiToneSymbol: 0
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 9
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.25
+        notePositionInKey: 4
+        semiToneSymbol: 0
+      - noteBegin: 0.25
+        noteDuration: 0.25
+        notePositionInKey: 6
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.5
+        notePositionInKey: 7
+        semiToneSymbol: 0
+      - noteBegin: 0.5
+        noteDuration: 0.5
+        notePositionInKey: 9
+        semiToneSymbol: 0
