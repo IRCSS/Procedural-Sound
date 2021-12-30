@@ -207,8 +207,35 @@ MonoBehaviour:
       - noteBegin: 0.75
         noteDuration: 0.25
         notePositionInKey: 2
-    - notesInTheMeasure: []
-    - notesInTheMeasure: []
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.125
+        notePositionInKey: 7
+      - noteBegin: 0.125
+        noteDuration: 0.125
+        notePositionInKey: 7
+      - noteBegin: 0.25
+        noteDuration: 0.125
+        notePositionInKey: 7
+      - noteBegin: 0.375
+        noteDuration: 0.125
+        notePositionInKey: 7
+      - noteBegin: 0.5
+        noteDuration: 0.375
+        notePositionInKey: 6
+      - noteBegin: 0.875
+        noteDuration: 0.125
+        notePositionInKey: 5
+    - notesInTheMeasure:
+      - noteBegin: 0
+        noteDuration: 0.25
+        notePositionInKey: 4
+      - noteBegin: 0.25
+        noteDuration: 0.25
+        notePositionInKey: 3
+      - noteBegin: 0.5
+        noteDuration: 0.5
+        notePositionInKey: 2
   Bass:
     Key: 0
     measuresInTheSheet: []
