@@ -34,6 +34,11 @@ public enum KeyScale
 {
     GMajor
 }
+
+public enum StaffType
+{
+    Treble, Bass
+}
 [CreateAssetMenu(fileName = "AMusicSheet", menuName = "ScriptableObjects/MusicSheet", order = 1)]
 public class MusicSheet : ScriptableObject {
 
