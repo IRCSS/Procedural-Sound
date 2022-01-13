@@ -20,6 +20,7 @@ public class StaffPlayer
         }
     }
 
+ 
     private MusicSheet sheetToPlay;
     private int beatPerMinute = 60;
 
@@ -47,6 +48,7 @@ public class StaffPlayer
         SharpsInTheMeasure         = new List<int>();
         FlatsInTheMeasure          = new List<int>();
         NaturalsInTheMeasure       = new List<int>();
+        
 
         notesCurrentlyPlaying = new List<NoteBeingPlayed>();
 
@@ -259,6 +261,9 @@ public class Pianist : MonoBehaviour {
 
     private Piano piano;
 
+    public bool PlaySongLeftHand  = true;
+    public bool PlaySongRightHand = true;
+
     StaffPlayer leftHand;
     StaffPlayer rightHand;
 
@@ -279,8 +284,8 @@ public class Pianist : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
         PlayWithPCKeyboard();
-        leftHand.UpdatePlayer(Time.deltaTime);
-        rightHand.UpdatePlayer(Time.deltaTime);
+        if(PlaySongLeftHand)  leftHand.UpdatePlayer(Time.deltaTime);
+        if(PlaySongRightHand) rightHand.UpdatePlayer(Time.deltaTime);
       
     }
 

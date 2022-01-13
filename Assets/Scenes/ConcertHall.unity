@@ -153,6 +153,8 @@ MonoBehaviour:
   beatPerMinute: 180
   firstKey: 48
   notesKeyCodes: 6100000073000000640000006600000067000000680000006a0000006b0000006c000000690000006f00000070000000
+  PlaySongLeftHand: 1
+  PlaySongRightHand: 1
 --- !u!4 &5156831
 Transform:
   m_ObjectHideFlags: 0
@@ -320,7 +322,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   fundementalToneFrequencies: {fileID: 11400000, guid: 2b4384e08610b314c835051d2f1e5a24,
     type: 2}
-  gain: 0.1
+  gain: 0.05
   firstKey: 9
   numberOfKeys: 88
   keysADSR:
