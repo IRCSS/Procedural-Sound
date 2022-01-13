@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Piano : MonoBehaviour {
 
-// --------------------------------------
+    public delegate void AudioFrameSampleGotUpdate(float[] data);
+    public AudioFrameSampleGotUpdate OnAudioFrameSampleGotUpdate;
+    // --------------------------------------
     // Public
     public KeyIndeciesToFrequencies fundementalToneFrequencies;
     public  float gain;
@@ -24,6 +26,9 @@ public class Piano : MonoBehaviour {
     private float scaleTimer = 0;
     private ActiveNote[] currentlyBeingPlayed = new ActiveNote[88];
 
+
+    private float[] perAudioFrameSampleData;
+
     void Start ()
     {
         ad_source         = gameObject.AddComponent<AudioSource>();
@@ -35,7 +40,12 @@ public class Piano : MonoBehaviour {
 
             currentlyBeingPlayed[i].fundementalFrequency = fundementalToneFrequencies.fundementalFrequencies[freqIndexOfCurrentKey];
         }
-        
+
+        perAudioFrameSampleData = new float[1024]; // Change this if something baout sample rate changes, souldnt be hardcoded, but here we are! 
+
+
+
+
     }
 
     // This function is called every time the audio stream info is updated. IMPORTANT: the function 
@@ -86,7 +96,7 @@ public class Piano : MonoBehaviour {
             fundementalToneFrequency = currentlyBeingPlayed[j].fundementalFrequency;
             for (int i = 0; i < data.Length; i++)
             {
-                data[i] += ReturnSuperimposedHarmonicsSeries(currentDataStep) * gain * volumeModifier;
+                data[i] += ReturnSuperimposedHarmonicsSeries(currentDataStep, timeSinceNoteStartedPlaying) * gain * volumeModifier;
                 currentDataStep++;
                 if (channels == 2)
                 {
@@ -96,10 +106,23 @@ public class Piano : MonoBehaviour {
             }
         }
 
+        // Storing the data for visualisation
+        if (perAudioFrameSampleData.Length != data.Length / channels)
+        {
+            Debug.LogError("ERROR: Unmatching array length in the piano audio thread");
+            return;
+        }
+
+        for(int i = 0; i < data.Length; i+= channels)
+        {
+            perAudioFrameSampleData[i / channels] = data[i];
+        }
+        if(OnAudioFrameSampleGotUpdate != null)
+        OnAudioFrameSampleGotUpdate(perAudioFrameSampleData);
     }
 
 
-    public float ReturnSuperimposedHarmonicsSeries(int dataIndex)
+    public float ReturnSuperimposedHarmonicsSeries(int dataIndex, float audioTime)
     {
         float superImposed = 0.0f;
 
