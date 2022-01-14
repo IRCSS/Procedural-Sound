@@ -6,6 +6,12 @@ public class Piano : MonoBehaviour {
 
     public delegate void AudioFrameSampleGotUpdate(float[] data);
     public AudioFrameSampleGotUpdate OnAudioFrameSampleGotUpdate;
+
+    public delegate void PianoKeyPressed (KeyNamesToIndicies notePressed);
+    public delegate void PianoKeyReleased(KeyNamesToIndicies noteToRelease);
+
+    public PianoKeyPressed  OnPianoKeyPressed;
+    public PianoKeyReleased OnPianoKeyReleased;
     // --------------------------------------
     // Public
     public KeyIndeciesToFrequencies fundementalToneFrequencies;
@@ -170,12 +176,16 @@ public class Piano : MonoBehaviour {
     {
         currentlyBeingPlayed[PianoKeynoteIndex].startPlayTime = (float)AudioSettings.dspTime;
         currentlyBeingPlayed[PianoKeynoteIndex].isBeingPlayed = true;
+
+        if (OnPianoKeyPressed != null) OnPianoKeyPressed((KeyNamesToIndicies) PianoKeynoteIndex);
     }
 
     public void ReleasePianoKeyAtIndex(int PianoKeynoteIndex)
     {
         currentlyBeingPlayed[PianoKeynoteIndex].isBeingPlayed = false;
         currentlyBeingPlayed[PianoKeynoteIndex].releaseTime   = (float)AudioSettings.dspTime;
+
+        if (OnPianoKeyReleased != null) OnPianoKeyReleased((KeyNamesToIndicies)PianoKeynoteIndex);
     }
 
     // Update is called once per frame
