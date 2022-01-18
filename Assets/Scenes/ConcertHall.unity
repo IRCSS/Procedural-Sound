@@ -153,8 +153,8 @@ MonoBehaviour:
   beatPerMinute: 180
   firstKey: 48
   notesKeyCodes: 6100000073000000640000006600000067000000680000006a0000006b0000006c000000690000006f00000070000000
-  PlaySongLeftHand: 0
-  PlaySongRightHand: 0
+  PlaySongLeftHand: 1
+  PlaySongRightHand: 1
 --- !u!4 &5156831
 Transform:
   m_ObjectHideFlags: 0
@@ -212,7 +212,7 @@ AudioLowPassFilter:
     m_Curve:
     - serializedVersion: 3
       time: 0
-      value: 0.68167347
+      value: 0.4542974
       inSlope: 0
       outSlope: 0
       tangentMode: 0

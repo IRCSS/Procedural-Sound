@@ -68,31 +68,29 @@ public class Piano : MonoBehaviour {
     void OnAudioFilterRead(float[] data, int channels)
     {
         
-
-        
         for(int j = 0; j<currentlyBeingPlayed.Length; j++)
         {
 
-            float timeSinceNoteStartedPlaying = (float)AudioSettings.dspTime - currentlyBeingPlayed[j].startPlayTime;
+            float timeSinceNoteStartedPlaying = (float)(AudioSettings.dspTime - currentlyBeingPlayed[j].startPlayTime);
 
             float volumeModifier = keysADSR.Sustain;
-            if (timeSinceNoteStartedPlaying <= keysADSR.Attack)
+            if (timeSinceNoteStartedPlaying <= keysADSR.Attack)    // It is in the Attack phase, the sound is still rising form 0 top to maximum (1) 
             {
                
                 volumeModifier = Mathf.InverseLerp(0.0f, keysADSR.Attack, timeSinceNoteStartedPlaying);
-            } else if(timeSinceNoteStartedPlaying < keysADSR.Decay + keysADSR.Attack)
+            } else if(timeSinceNoteStartedPlaying < keysADSR.Decay + keysADSR.Attack)   // The sound is in the decay phase meaning it is going from the maximum to the sustained level
             {
                 volumeModifier = Mathf.InverseLerp(keysADSR.Attack, keysADSR.Attack + keysADSR.Decay, timeSinceNoteStartedPlaying);
                 volumeModifier = Mathf.Lerp(1.0f, keysADSR.Sustain, volumeModifier);
             }
             
 
-            if (!currentlyBeingPlayed[j].isBeingPlayed )
+            if (!currentlyBeingPlayed[j].isBeingPlayed )              // The key is not being held any more, this is not a realistic piano as it can hold a note on sustain forever, it only goes to release when you release a key! 
             {
 
-                timeSinceNoteStartedPlaying = (float)AudioSettings.dspTime - currentlyBeingPlayed[j].releaseTime;
+                timeSinceNoteStartedPlaying = (float)(AudioSettings.dspTime - currentlyBeingPlayed[j].releaseTime);
                
-                if (timeSinceNoteStartedPlaying > keysADSR.Release) continue;
+                if (timeSinceNoteStartedPlaying > keysADSR.Release) continue;  // Skip the contribution of this piano key if it is not being played and it has already faded to 0
                
                 volumeModifier = Mathf.InverseLerp(0.0f, keysADSR.Release, timeSinceNoteStartedPlaying);
                 volumeModifier = Mathf.Lerp(keysADSR.Sustain, 0.0f, volumeModifier);
@@ -102,7 +100,7 @@ public class Piano : MonoBehaviour {
             fundementalToneFrequency = currentlyBeingPlayed[j].fundementalFrequency;
             for (int i = 0; i < data.Length; i++)
             {
-                data[i] += ReturnSuperimposedHarmonicsSeries(currentDataStep, timeSinceNoteStartedPlaying) * gain * volumeModifier;
+                data[i] += ReturnSuperimposedHarmonicsSeries(currentDataStep, currentlyBeingPlayed[j].startPlayTime) * gain * volumeModifier;
                 currentDataStep++;
                 if (channels == 2)
                 {
@@ -128,7 +126,7 @@ public class Piano : MonoBehaviour {
     }
 
 
-    public float ReturnSuperimposedHarmonicsSeries(int dataIndex, float audioTime)
+    public float ReturnSuperimposedHarmonicsSeries(int dataIndex, double audioTime)
     {
         float superImposed = 0.0f;
 
@@ -136,22 +134,14 @@ public class Piano : MonoBehaviour {
         {
             float harmonicFrequency = fundementalToneFrequency * i;
 
-            float timeAtTheBeginig = (float)(AudioSettings.dspTime % (1.0 / (double)harmonicFrequency)); // very important to deal with percision issue as dspTime gets large
-
-            //float increment = harmonicFrequency * 2f * Mathf.PI / samplingFrequency;
-
+            float timeAtTheBeginig = (float)((AudioSettings.dspTime - audioTime) % (1.0 / (double)harmonicFrequency)); // very important to deal with percision issue as dspTime gets large
 
             float exactTime = timeAtTheBeginig + (float)dataIndex / samplingFrequency;
-            //  phase[i-1] = phase[i - 1] + increment;
-            //  if (phase[i - 1] > 2.0f * Mathf.PI) phase[i - 1] = 0;
-            // 
-            //  superImposed += Mathf.Sin(phase[i - 1]) * harmonicStrengths[i - 1];
+
 
             superImposed += Mathf.Sin(exactTime * harmonicFrequency * 2f * Mathf.PI) * harmonicStrengths[i - 1];
         }
         
-
-
         return superImposed;
     }
 
@@ -174,7 +164,7 @@ public class Piano : MonoBehaviour {
 
     public void PressPianoKeyAtIndex(int PianoKeynoteIndex)
     {
-        currentlyBeingPlayed[PianoKeynoteIndex].startPlayTime = (float)AudioSettings.dspTime;
+        currentlyBeingPlayed[PianoKeynoteIndex].startPlayTime = AudioSettings.dspTime;
         currentlyBeingPlayed[PianoKeynoteIndex].isBeingPlayed = true;
 
         if (OnPianoKeyPressed != null) OnPianoKeyPressed((KeyNamesToIndicies) PianoKeynoteIndex);
@@ -183,7 +173,7 @@ public class Piano : MonoBehaviour {
     public void ReleasePianoKeyAtIndex(int PianoKeynoteIndex)
     {
         currentlyBeingPlayed[PianoKeynoteIndex].isBeingPlayed = false;
-        currentlyBeingPlayed[PianoKeynoteIndex].releaseTime   = (float)AudioSettings.dspTime;
+        currentlyBeingPlayed[PianoKeynoteIndex].releaseTime   = AudioSettings.dspTime;
 
         if (OnPianoKeyReleased != null) OnPianoKeyReleased((KeyNamesToIndicies)PianoKeynoteIndex);
     }

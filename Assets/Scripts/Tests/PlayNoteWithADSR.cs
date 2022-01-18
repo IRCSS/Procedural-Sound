@@ -17,10 +17,10 @@ public class ADSR
 
 public struct ActiveNote
 {
-    public float startPlayTime;
-    public float releaseTime;
-    public bool  isBeingPlayed;
-    public float fundementalFrequency;
+    public double  startPlayTime;
+    public double  releaseTime;
+    public bool    isBeingPlayed;
+    public float   fundementalFrequency;
     
 }
 
@@ -81,7 +81,7 @@ public class PlayNoteWithADSR : MonoBehaviour {
         for(int j = 0; j<currentlyBeingPlayed.Length; j++)
         {
 
-            float timeSinceNoteStartedPlaying = (float)AudioSettings.dspTime - currentlyBeingPlayed[j].startPlayTime;
+            float timeSinceNoteStartedPlaying = (float)(AudioSettings.dspTime - currentlyBeingPlayed[j].startPlayTime);
 
             float volumeModifier = keysADSR.Sustain;
             if (timeSinceNoteStartedPlaying <= keysADSR.Attack)
@@ -98,7 +98,7 @@ public class PlayNoteWithADSR : MonoBehaviour {
             if (!currentlyBeingPlayed[j].isBeingPlayed )
             {
 
-                timeSinceNoteStartedPlaying = (float)AudioSettings.dspTime - currentlyBeingPlayed[j].releaseTime;
+                timeSinceNoteStartedPlaying = (float)(AudioSettings.dspTime - currentlyBeingPlayed[j].releaseTime);
                
                 if (timeSinceNoteStartedPlaying > keysADSR.Release) continue;
                
@@ -110,7 +110,7 @@ public class PlayNoteWithADSR : MonoBehaviour {
             fundementalToneFrequency = currentlyBeingPlayed[j].fundementalFrequency;
             for (int i = 0; i < data.Length; i++)
             {
-                data[i] += ReturnSuperimposedHarmonicsSeries(currentDataStep) * gain * volumeModifier;
+                data[i] += ReturnSuperimposedHarmonicsSeries(currentDataStep, currentlyBeingPlayed[j].startPlayTime) * gain * volumeModifier;
                 currentDataStep++;
                 if (channels == 2)
                 {
@@ -123,7 +123,7 @@ public class PlayNoteWithADSR : MonoBehaviour {
     }
 
 
-    public float ReturnSuperimposedHarmonicsSeries(int dataIndex)
+    public float ReturnSuperimposedHarmonicsSeries(int dataIndex, double startTime)
     {
         float superImposed = 0.0f;
 
@@ -131,7 +131,7 @@ public class PlayNoteWithADSR : MonoBehaviour {
         {
             float harmonicFrequency = fundementalToneFrequency * i;
 
-            float timeAtTheBeginig = (float)(AudioSettings.dspTime % (1.0 / (double)harmonicFrequency)); // very important to deal with percision issue as dspTime gets large
+            float timeAtTheBeginig = (float)((AudioSettings.dspTime - startTime) % (1.0 / (double)harmonicFrequency)); // very important to deal with percision issue as dspTime gets large
 
             //float increment = harmonicFrequency * 2f * Mathf.PI / samplingFrequency;
 
@@ -161,12 +161,12 @@ public class PlayNoteWithADSR : MonoBehaviour {
             if (Input.GetKeyUp(kc))
             {
                 currentlyBeingPlayed[i].isBeingPlayed = false;
-                currentlyBeingPlayed[i].releaseTime   = (float)AudioSettings.dspTime;
+                currentlyBeingPlayed[i].releaseTime   = AudioSettings.dspTime;
             }
 
             if (Input.GetKeyDown(kc))
             {
-                currentlyBeingPlayed[i].startPlayTime = (float)AudioSettings.dspTime;
+                currentlyBeingPlayed[i].startPlayTime = AudioSettings.dspTime;
                 currentlyBeingPlayed[i].isBeingPlayed = true;
             }
         }
